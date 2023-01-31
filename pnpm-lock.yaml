@@ -7,17 +7,19 @@ importers:
 
   api:
     specifiers:
-      axios: ^1.2.1
-      cohere-js: ^1.0.24
+      cohere-ai: ^5.0.2
+      cors: ^2.8.5
       dotenv: ^16.0.3
       eslint: ^8.29.0
       express: ^4.18.2
+      morgan: ^1.10.0
       standard: ^17.0.0
     dependencies:
-      axios: 1.2.4
-      cohere-js: 1.0.24
+      cohere-ai: 5.0.2
+      cors: 2.8.5
       dotenv: 16.0.3
       express: 4.18.2
+      morgan: 1.10.0
     devDependencies:
       eslint: 8.32.0
       standard: 17.0.0
@@ -29,6 +31,7 @@ importers:
       '@types/react': ^18.0.21
       '@types/react-dom': ^18.0.6
       astro: ^2.0.1
+      axios: ^1.2.6
       react: ^18.0.0
       react-dom: ^18.0.0
       tailwindcss: ^3.0.24
@@ -38,6 +41,7 @@ importers:
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
       astro: 2.0.1
+      axios: 1.2.6
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       tailwindcss: 3.2.4
@@ -1091,8 +1095,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axios/1.2.4:
-    resolution: {integrity: sha512-lIQuCfBJvZB/Bv7+RWUqEJqNShGOVpk9v7P0ZWx5Ip0qY6u7JBAU6dzQPMLasU9vHL2uD8av/1FDJXj7n6c39w==}
+  /axios/1.2.6:
+    resolution: {integrity: sha512-rC/7F08XxZwjMV4iuWv+JpD3E0Ksqg9nac4IIg6RwNuF0JTeWoCo/mBNG54+tNhhI11G3/VDRbdDQTs9hGp4pQ==}
     dependencies:
       follow-redirects: 1.15.2
       form-data: 4.0.0
@@ -1111,6 +1115,13 @@ packages:
 
   /base64-js/1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
+    dev: false
+
+  /basic-auth/2.0.1:
+    resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      safe-buffer: 5.1.2
     dev: false
 
   /binary-extensions/2.2.0:
@@ -1314,8 +1325,8 @@ packages:
     engines: {node: '>=0.8'}
     dev: false
 
-  /cohere-js/1.0.24:
-    resolution: {integrity: sha512-MkSd9CMenFhEiM2LDr4bbXl7JyPcMFyigIqnV7lXs7QhfEF6glv9h0BaGcOqQtUKPZBxX2gvRF297hkxf5JPJw==}
+  /cohere-ai/5.0.2:
+    resolution: {integrity: sha512-Svt8VC20/GgwCBF2kHYZI3JZkfqEoG6wCbTT6tohNK8x/aBFyMxlBUYEF0gRGXH1055vQpBjj5ewHF8LpnSSOA==}
     dev: false
 
   /color-convert/1.9.3:
@@ -1379,6 +1390,14 @@ packages:
   /cookie/0.5.0:
     resolution: {integrity: sha512-YZ3GUyn/o8gfKJlnlX7g7xq4gyO6OSuhGPKaaGssGB2qgDUS0gPgtTvoyZLTt9Ab6dC4hfc9dV5arkvc/OCmrw==}
     engines: {node: '>= 0.6'}
+    dev: false
+
+  /cors/2.8.5:
+    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
+    engines: {node: '>= 0.10'}
+    dependencies:
+      object-assign: 4.1.1
+      vary: 1.1.2
     dev: false
 
   /cross-spawn/7.0.3:
@@ -3369,6 +3388,19 @@ packages:
   /minimist/1.2.7:
     resolution: {integrity: sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==}
 
+  /morgan/1.10.0:
+    resolution: {integrity: sha512-AbegBVI4sh6El+1gNwvD5YIck7nSA36weD7xvIxG4in80j/UoK8AEGaWnnz8v1GxonMCltmlNs5ZKbGvl9b1XQ==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      basic-auth: 2.0.1
+      debug: 2.6.9
+      depd: 2.0.0
+      on-finished: 2.3.0
+      on-headers: 1.0.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -3429,7 +3461,6 @@ packages:
   /object-assign/4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /object-hash/3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
@@ -3488,11 +3519,23 @@ packages:
       es-abstract: 1.21.1
     dev: true
 
+  /on-finished/2.3.0:
+    resolution: {integrity: sha512-ikqdkGAAyf/X/gPhXGvfgAytDZtDbr+bkNUJ0N9h5MI/dmdgCs3l6hoHrcUv41sRKew3jIwrp4qQDXiK99Utww==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      ee-first: 1.1.1
+    dev: false
+
   /on-finished/2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
     dependencies:
       ee-first: 1.1.1
+    dev: false
+
+  /on-headers/1.0.2:
+    resolution: {integrity: sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==}
+    engines: {node: '>= 0.8'}
     dev: false
 
   /once/1.4.0:
@@ -4104,6 +4147,10 @@ packages:
     engines: {node: '>=6'}
     dependencies:
       mri: 1.2.0
+    dev: false
+
+  /safe-buffer/5.1.2:
+    resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: false
 
   /safe-buffer/5.2.1:

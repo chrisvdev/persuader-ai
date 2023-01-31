@@ -25,7 +25,7 @@ action: hurry
 phrase: don't loose the time!
 --
 action: {action}
-phrase:`
+phrase: `
 
 const CTAGen = {
   max_tokens: 10,
@@ -60,7 +60,7 @@ topic: we show 7 tools to Boost a Blog Engagement
 title: The 7 Best Visual Content Tools to Boost your Blog’s Engagement!
 --
 topic: we show {topic}
-title:`
+title: `
 
 const CBGen = {
   max_tokens: 20,
@@ -80,7 +80,10 @@ export async function generateClickbait (topic, quantity) {
   quantity && (input = { ...input, num_generations: quantity })
   try {
     const generated = await cohere.generate(input)
-    return generated.body.generations.map((result) => result.text.split('\n')[0])
+    console.log(generated.body.generations)
+    const response = generated.body.generations.map((result) => result.text.split('\n')[0])
+    console.log(response)
+    return response
   } catch (error) {
     // const ClickbaitError = createCustomError('ClickbaitGenerationError')
     // return new ClickbaitError(error.message)
@@ -93,7 +96,10 @@ export async function generateCTA (action, quantity) {
   quantity && (input = { ...input, num_generations: quantity })
   try {
     const generated = await cohere.generate(input)
-    return generated.body.generations.map((result) => result.text.split('\n')[0])
+    console.log(generated.body.generations)
+    const response = generated.body.generations.map((result) => result.text.split('\n')[0])
+    console.log(response)
+    return response
   } catch (error) {
     // const CTAError = createCustomError('CTAGenerationError')
     // return new CTAError(error.message)
