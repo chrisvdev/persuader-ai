@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 
-export default function useClickbait(input = "how to learn a programing language", quantity = 1) {
+export const [CB,CTA]=['clickbait','cta']
+
+export default function useAPI(input = "how to learn a programing language", quantity = 1, mode = CB ) {
     const [userInput, setUserInput] = useState({ input, quantity })
     const [AIResponse, setAIResponse] = useState([])
     useEffect(() => {
         const config = {
-            url: 'http://localhost:10002/api/clickbait',  //document.location.origin
+            url: `http://localhost:10002/api/${mode}`,  //document.location.origin
             method: 'POST',
             data: {
                 input: userInput.input,

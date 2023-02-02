@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Ai from "../components/Ai";
+import { CB } from "../hooks/api.js";
+---
+
+<Layout title="Persuader.ai - Clickbait">
+  <Ai client:load mode={CB} />
+</Layout>

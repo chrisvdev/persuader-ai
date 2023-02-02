@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
-import useClickbait from "../hooks/clickbait";
+import useAPI, { CB, CTA } from "../hooks/api.js";
 
-function Ai() {
-  const [userInput, AIResponse, setInput] = useClickbait();
+function Ai(props) {
+  const { mode } = props;
+  const [input, quantity] =
+    mode === CB
+      ? ["how to learn a programing language", 1]
+      : ["Like this video", 1];
+  const [userInput, AIResponse, setInput] = useAPI(input, quantity, mode);
   const [toSubmit, setSubmit] = useState({ clickbaitInput: "", quantity: 1 });
   const inputRef = React.createRef();
   const eventHandler = (e) => {
@@ -13,7 +18,7 @@ function Ai() {
       if (!modification.quantity)
         modification = { [e.target.name]: e.target.value };
     } else modification = { [e.target.name]: e.target.value };
-    
+
     /*
     e.target.name === "quantity"
       ? parseInt(e.target.value) < 1

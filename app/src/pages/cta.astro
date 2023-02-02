@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Ai from "../components/Ai.jsx";
+import { CTA } from "../hooks/api.js";
+---
+
+<Layout title='persuader.ai - CTA generator'>
+    <Ai client:load mode={CTA}/>
+</Layout>
