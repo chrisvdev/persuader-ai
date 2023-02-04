@@ -1,6 +1,7 @@
 ---
 const { title } = Astro.props;
 import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <!DOCTYPE html>
@@ -13,10 +14,11 @@ import Nav from "../components/Nav.astro";
 		<link rel="stylesheet" href="https://use.typekit.net/tad6bqt.css">
 		<title>{title}</title>
 	</head>
-	<body class="font-gimlet-display subpixel-antialiased bg-gradient-to-tl from-indigo-500 via-indigo-700 to-indigo-900 text-neutral-50 min-h-screen">
+	<body class="flex flex-col font-gimlet-display subpixel-antialiased bg-gradient-to-tl from-indigo-500 via-indigo-700 to-indigo-900 text-neutral-50 min-h-screen">
 		<Nav/>
 		<section class="grid place-content-center p-10">
 			<slot />
 		</section>
+		<Footer/>
 	</body>
 </html>
