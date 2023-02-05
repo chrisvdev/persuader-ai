@@ -8,7 +8,7 @@ export default function useAPI(input = "how to learn a programing language", qua
     const [AIResponse, setAIResponse] = useState([])
     useEffect(() => {
         const config = {
-            url: `http://localhost:10002/api/${mode}`,  //document.location.origin
+            url: `http://localhost:10002/api/${mode}`,  // to be replaced with `${document.location.origin}/api/${mode}` on build
             method: 'POST',
             data: {
                 input: userInput.input,

@@ -6,7 +6,10 @@
   "workspaces":["app","api"],
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"npm run start --workspace=api",
+    "start:dev":"npm run dev --workspace=api",
+    "build":"npm run build --workspace=app",
+    "dev": "npm run dev --workspace=app"
   },
   "keywords": [],
   "author": "",

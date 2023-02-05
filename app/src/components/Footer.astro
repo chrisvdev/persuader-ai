@@ -2,42 +2,80 @@
 import TwitchSVG from "./TwitchSVG.astro";
 import LinkedInSVG from "./LinkedInSVG.astro";
 import GithubSVG from "./GithubSVG.astro";
-const size = "1.25rem";
+import CohereSVG from "./CohereSVG.astro";
+const size = "1.15rem";
 const color = "";
 ---
 
 <footer
-  class="flex w-full place-content-center gap-20 flex-wrap mt-20 overflow-hidden"
+  class="flex w-full place-content-center gap-20 flex-wrap-reverse mt-20 overflow-hidden text-slate-300 italic mb-20"
 >
-  <article class="flex flex-col max-w-xs">
-    <h3 class="mb-1 text-lg italic font-semibold">Christian Villegas</h3>
-    <a href="https://twitch.com/chrisvdev" target="_blank" rel="noopener noreferrer" class="flex justify-center content-center items-center my-1">
-      <TwitchSVG size={size} className="fill-orange-400 " />
-      <p class="ml-2">Chrisvdev</p>
+  <article class="flex flex-col max-w-xs ">
+    <h3 class="mb-1 font-semibold">Christian Villegas</h3>
+    <h4 class="mb-1 text-sm text-center">Software developer</h4>
+    <a
+      href="https://twitch.com/chrisvdev"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex justify-center content-center items-center my-1"
+    >
+      <TwitchSVG size={size} className="fill-orange-400" />
+      <p class="ml-2 text-sm">Chrisvdev</p>
     </a>
-    <a href="https://www.linkedin.com/in/chrisvill2312/" target="_blank" rel="noopener noreferrer" class="flex justify-center content-center items-center my-1">
-      <LinkedInSVG size={size} className="fill-orange-400 " />
-      <p class="ml-2">/chrisvill2312</p>
+    <a
+      href="https://www.linkedin.com/in/chrisvill2312/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex justify-center content-center items-center my-1"
+    >
+      <LinkedInSVG size={size} className="fill-orange-400" />
+      <p class="ml-2 text-sm">/chrisvill2312</p>
     </a>
-    <a href="https://github.com/chrisvill2312" target="_blank" rel="noopener noreferrer" class="flex justify-center content-center items-center my-1">
-    <GithubSVG size={size} className="fill-orange-400 " />
-    <p class="ml-2">/chrisvill2312</p>
-</a>
-</article>
-<article class="flex flex-col max-w-xs">akdaposjdopasjdp</article>
-  <article class="flex flex-col max-w-xs">
-      <h3 class="mb-1 text-lg italic font-semibold">Miguel Angel Duran</h3>
-    <a href="https://twitch.com/midudev" target="_blank" rel="noopener noreferrer" class="flex justify-center content-center items-center my-1">
-      <TwitchSVG size={size} className="fill-orange-400 " />
-      <p class="ml-2">Midudev</p>
+    <a
+      href="https://github.com/chrisvill2312"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex justify-center content-center items-center my-1"
+    >
+      <GithubSVG size={size} className="fill-orange-400" />
+      <p class="ml-2 text-sm">/chrisvill2312</p>
     </a>
-    <a href="https://www.linkedin.com/in/midudev/" target="_blank" rel="noopener noreferrer" class="flex justify-center content-center items-center my-1">
-        <LinkedInSVG size={size} className="fill-orange-400 " />
-        <p class="ml-2">/midudev</p>
+  </article>
+  <article class="flex flex-col max-w-xs order-last sm:order-first">
+    <a href="https://cohere.ai/" target="_blank" rel="noopener noreferrer">
+      <CohereSVG size="120" className="fill-orange-400" />
     </a>
-    <a href="https://github.com/midudev" target="_blank" rel="noopener noreferrer" class="flex justify-center content-center items-center my-1">
-      <GithubSVG size={size} className="fill-orange-400 " />
-      <p class="ml-2">/midudev</p>
+    <h4 class="mb-1 text-sm text-center relative bottom-9 right-2">AI Hackaton Sponsor</h4>
+  </article>
+  <article class="flex flex-col max-w-xs order-first sm:order-none">
+    <h3 class="mb-1 font-semibold">Miguel Angel Duran</h3>
+    <h4 class="mb-1 text-sm text-center">Hackaton organizer</h4>
+    <a
+      href="https://twitch.com/midudev"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex justify-center content-center items-center my-1"
+    >
+      <TwitchSVG size={size} className="fill-orange-400" />
+      <p class="ml-2 text-sm">Midudev</p>
+    </a>
+    <a
+      href="https://www.linkedin.com/in/midudev/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex justify-center content-center items-center my-1"
+    >
+      <LinkedInSVG size={size} className="fill-orange-400" />
+      <p class="ml-2 text-sm">/midudev</p>
+    </a>
+    <a
+      href="https://github.com/midudev"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex justify-center content-center items-center my-1"
+    >
+      <GithubSVG size={size} className="fill-orange-400" />
+      <p class="ml-2 text-sm">/midudev</p>
     </a>
   </article>
 </footer>

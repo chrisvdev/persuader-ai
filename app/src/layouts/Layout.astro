@@ -14,9 +14,9 @@ import Footer from "../components/Footer.astro";
 		<link rel="stylesheet" href="https://use.typekit.net/tad6bqt.css">
 		<title>{title}</title>
 	</head>
-	<body class="flex flex-col font-gimlet-display subpixel-antialiased bg-gradient-to-tl from-indigo-500 via-indigo-700 to-indigo-900 text-neutral-50 min-h-screen">
+	<body class="flex flex-col font-gimlet-display subpixel-antialiased bg-gradient-to-b from-indigo-900 via-indigo-600 to-slate-900 text-neutral-50 min-h-screen">
 		<Nav/>
-		<section class="grid place-content-center p-10">
+		<section class="grid place-content-center p-10" style="min-height: 50vh;">
 			<slot />
 		</section>
 		<Footer/>
