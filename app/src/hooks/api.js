@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
 
-export const [CB,CTA]=['clickbait','cta']
+export const [CB, CTA] = ['clickbait', 'cta']
 
-export default function useAPI(input = "how to learn a programing language", quantity = 1, mode = CB ) {
+export default function useAPI(input = "how to learn a programing language", quantity = 1, mode = CB) {
     const [userInput, setUserInput] = useState({ input, quantity })
     const [AIResponse, setAIResponse] = useState([])
     useEffect(() => {
+        setAIResponse([])
         const config = {
             url: `http://localhost:10002/api/${mode}`,  // to be replaced with `${document.location.origin}/api/${mode}` on build
             method: 'POST',

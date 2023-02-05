@@ -2,4 +2,41 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Persuader.ai - API" />
+<Layout title="Persuader.ai - API">
+  <h2 class="text-3xl text-center mb-6 font-semibold text-orange-400">
+    Persuader.ai's API
+  </h2>
+  <p class="text-xl mb-4">
+    The endpoints of this API are:
+    <br />
+    <small class="italic text-sm"
+      >(Using https://persuaderai.christianvillegas.com/ as a base URL)</small
+    >
+  </p>
+  <p class="text-lg mb-4">
+    A POST to "/api/clickbait" generate clickbait titles.
+    <br />
+    A POST to "/api/cta" generate Call-to-Action (CTA) phrases.
+  </p>
+  <p class="text-lg mb-4">
+    You need to give the prompt and quantity in a JSON on the body of the HTTP
+    request on both of the endpoint, someting like this:
+  </p>
+  <pre
+    class="text-lg mb-4 bg-slate-800 p-4 rounded w-fit m-auto bg-opacity-60">
+{`{`}
+{"  "}"input":"the result of being a bad person", 
+{"  "}"quantity": 2
+{`}` /*pre tag founded by felixicaza*/}
+  </pre>
+  <p class="text-lg mb-4">
+    As a result the server gives you JSON with an array of strigs like this:
+  </p>
+  <pre
+    class="text-lg mb-4 bg-slate-800 p-4 rounded w-fit m-auto bg-opacity-60">
+{`[`}
+{"  "}"This Is What Happens When You Are A Bad Person", 
+{"  "}"This Is What Happens If You Are A Bad Person"
+{`]` /*pre tag founded by felixicaza*/}
+  </pre>
+</Layout>
