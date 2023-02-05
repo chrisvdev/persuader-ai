@@ -43,9 +43,9 @@ function Ai(props) {
   return (
     <>
       <article
-        className="flex flex-col items-center border rounded p-6 border-amber-600 bg-gradient-to-br from-indigo-800 via-indigo-700 to-indigo-900 w-max m-auto h"
+        className="flex flex-col items-center border rounded p-6 border-amber-600 bg-gradient-to-br from-indigo-800 via-indigo-700 to-indigo-900 sm:w-max m-auto h" style={{maxWidth:"80vh"}}
       >
-        <h2 className="text-3xl mb-6 font-semibold text-orange-400">{`${
+        <h2 className="text-3xl text-center mb-6 font-semibold text-orange-400">{`${
           mode === CTA ? "CTA" : "Clickbait"
         } generator`}</h2>
         <form className="flex flex-col" onSubmit={runSubmit}>
