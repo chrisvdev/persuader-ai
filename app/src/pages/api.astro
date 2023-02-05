@@ -22,21 +22,25 @@ import Layout from "../layouts/Layout.astro";
     You need to give the prompt and quantity in a JSON on the body of the HTTP
     request on both of the endpoint, someting like this:
   </p>
-  <pre
-    class="text-lg mb-4 bg-slate-800 p-4 rounded w-fit m-auto bg-opacity-60">
-{`{`}
-{"  "}"input":"the result of being a bad person", 
-{"  "}"quantity": 2
-{`}` /*pre tag founded by felixicaza*/}
-  </pre>
+  <div class="flex overflow-x-scroll sm:overflow-x-auto m-auto" style="max-width: 80vw;">
+    <pre
+      class="text-lg bg-slate-800 p-4 rounded max-w-prose bg-opacity-60">
+      {`{`}
+      {"  "}"input":"the result of being a bad person", 
+      {"  "}"quantity": 2
+      {`}` /*pre tag founded by felixicaza*/}
+    </pre>
+  </div>
   <p class="text-lg mb-4">
     As a result the server gives you JSON with an array of strigs like this:
   </p>
-  <pre
-    class="text-lg mb-4 bg-slate-800 p-4 rounded w-fit m-auto bg-opacity-60">
-{`[`}
-{"  "}"This Is What Happens When You Are A Bad Person", 
-{"  "}"This Is What Happens If You Are A Bad Person"
-{`]` /*pre tag founded by felixicaza*/}
-  </pre>
+  <div class="flex overflow-x-scroll sm:overflow-x-auto m-auto" style="max-width: 80vw;">
+    <pre
+      class="text-lg bg-slate-800 p-4 rounded max-w-prose bg-opacity-60">
+      {`[`}
+      {"  "}"This Is What Happens When You Are A Bad Person", 
+      {"  "}"This Is What Happens If You Are A Bad Person"
+      {`]` /*pre tag founded by felixicaza*/}
+    </pre>
+  </div>
 </Layout>
