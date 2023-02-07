@@ -32,3 +32,11 @@ As a result the server gives you JSON with an array of strigs like this:
         "This Is What Happens When You Are A Bad Person", 
         "This Is What Happens If You Are A Bad Person"
       ]
+
+## If you want to fork or download this project
+Don't forget to create a .env file on the API folder. It should contained:
+
+ 
+
+    API_KEY=ofCohere'sAPI
+    PORT=10002 // the port http server
