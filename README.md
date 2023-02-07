@@ -39,4 +39,4 @@ Don't forget to create a .env file on the API folder. It should contained:
  
 
     API_KEY=ofCohere'sAPI
-    PORT=10002 // the port http server
+    PORT=10002 // the port of the http server
