@@ -10,7 +10,6 @@ function Ai(props) {
       ? ["how to learn a programing language", 1]
       : ["Like this video", 1];
   const [userInput, AIResponse, setInput] = useAPI(input, quantity, mode);
-  console.log(AIResponse);
   const [toSubmit, setSubmit] = useState({ clickbaitInput: "", quantity: 1 });
   const inputRef = React.createRef();
   const eventHandler = (e) => {
@@ -36,9 +35,6 @@ function Ai(props) {
     e.preventDefault();
     setInput(toSubmit.clickbaitInput, toSubmit.quantity);
   };
-  useEffect(() => {
-    console.log(toSubmit);
-  }, [toSubmit]);
 
   return (
     <>

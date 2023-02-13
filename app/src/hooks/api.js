@@ -16,11 +16,8 @@ export default function useAPI(input = "how to learn a programing language", qua
                 quantity: userInput.quantity
             }
         }
-        console.log('entro')
-        console.log(config)
         axios(config)
             .then(response => {
-                console.log(response.data)
                 setAIResponse(response.data)
             })
             .catch(
