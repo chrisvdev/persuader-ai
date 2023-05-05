@@ -36,10 +36,13 @@ function Ai(props) {
     setInput(toSubmit.clickbaitInput, toSubmit.quantity);
   };
 
+  useEffect(() => console.log(AIResponse), [AIResponse]);
+
   return (
     <>
       <article
-        className="flex flex-col items-center border rounded p-6 border-amber-600 bg-gradient-to-br from-indigo-800 via-indigo-700 to-indigo-900 sm:w-max m-auto h" style={{maxWidth:"80vh"}}
+        className="flex flex-col items-center border rounded p-6 border-amber-600 bg-gradient-to-br from-indigo-800 via-indigo-700 to-indigo-900 sm:w-max m-auto h"
+        style={{ maxWidth: "80vh" }}
       >
         <h2 className="text-3xl text-center mb-6 font-semibold text-orange-400">{`${
           mode === CTA ? "CTA" : "Clickbait"
@@ -85,19 +88,31 @@ function Ai(props) {
         </form>
       </article>
       <article className="flex my-10 flex-col">
-        {AIResponse.length > 0 ? (
-          AIResponse.map((response, i) => (
-            <Response response={response} i={i} />
-          ))
+        {Array.isArray(AIResponse) ? (
+          AIResponse.length > 0 ? (
+            AIResponse.map((response, i) => (
+              <Response response={response} i={i} />
+            ))
+          ) : (
+            <p
+              title="Click this to copy on clipboard!"
+              className="flex justify-center items-center text-center py-2 px-4 my-1 mx-2 border rounded border-amber-600 hover:border-amber-400 hover:scale-105 hover:bg-indigo-700 active:scale-95 active:border-amber-200 active:bg-indigo-500 sm:text-xl transition-all"
+            >
+              {
+                `Creating the best ${mode === CTA ? "CTA" : "Clickbait"}${
+                  toSubmit.quantity > 1 ? "s" : ""
+                } for you` /* UX inspirited from GermanL3t */
+              }
+              <div className="relative top-2 left-1">
+                <LeapFrog size={20} speed={2.5} color="#fafafa" />
+              </div>
+            </p>
+          )
         ) : (
           <p
-            title="Click this to copy on clipboard!"
-            className="flex py-2 px-4 my-1 mx-2 border rounded border-amber-600 hover:border-amber-400 hover:scale-105 hover:bg-indigo-700 active:scale-95 active:border-amber-200 active:bg-indigo-500 sm:text-xl transition-all"
+            className="flex justify-center items-center text-center py-2 px-4 my-1 mx-2 border rounded border-amber-600 hover:border-amber-400 hover:scale-105 hover:bg-indigo-700 active:scale-95 active:border-amber-200 active:bg-indigo-500 sm:text-xl transition-all"
           >
-            {`Creating the best ${mode === CTA ? "CTA" : "Clickbait"}${toSubmit.quantity > 1 ? "s" : ""} for you` /* UX inspirited from GermanL3t */ }  
-            <div className="relative top-2 left-1">
-              <LeapFrog size={20} speed={2.5} color="#fafafa" />
-            </div>
+           Sorry but at this moment the provider of the service isn't responding 😢, try again in a moment
           </p>
         )}
       </article>

@@ -3,7 +3,7 @@ import axios from "axios"
 
 export const [CB, CTA] = ['clickbait', 'cta']
 
-export default function useAPI(input = "how to learn a programing language", quantity = 1, mode = CB) {
+export default function useAPI(input = "how to learn a programming language", quantity = 1, mode = CB) {
     const [userInput, setUserInput] = useState({ input, quantity })
     const [AIResponse, setAIResponse] = useState([])
     useEffect(() => {
